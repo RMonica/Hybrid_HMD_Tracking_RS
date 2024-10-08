@@ -32,7 +32,7 @@ NEWFILES_PRISMI_SHORT2=`get_base_names "$FILES_PRISMI_SHORT2"`
 for i in ${!MODES[@]}
   do
   mode=${MODES[i]}
-  MODE_LOWERCASE=${mode,,}
+  MODE_LOWERCASE=`echo "$mode" | tr '[:upper:]' '[:lower:]'`
   MODE_NOSPACES=`echo "$MODE_LOWERCASE" | sed 's/ //g'`
   ${DIR_PARSER}/tracking_parser_compute_errors "MODE_${mode}" 200 600 ${NEWFILES_PRISMI} -s MODE_CONSTR_COMPLEMENTARY_RO -s MODE_CONSTR_COMPLEMENTARY_TO -s MODE_MOTIVE_FIRST \
                                 -newgroup ${NEWFILES_PRISMI_ALPHA} -s MODE_COMPLEMENTARY \
@@ -51,7 +51,7 @@ NEWFILES_CUBI_SHORT2=`get_base_names "$FILES_CUBI_SHORT2"`
 for i in ${!MODES[@]}
   do
   mode=${MODES[i]}
-  MODE_LOWERCASE=${mode,,}
+  MODE_LOWERCASE=`echo "$mode" | tr '[:upper:]' '[:lower:]'`
   MODE_NOSPACES=`echo "$MODE_LOWERCASE" | sed 's/ //g'`
   ${DIR_PARSER}/tracking_parser_compute_errors "MODE_${mode}" 200 600 ${NEWFILES_CUBI} -s MODE_CONSTR_COMPLEMENTARY_RO -s MODE_CONSTR_COMPLEMENTARY_TO -s MODE_MOTIVE_FIRST \
                                 -newgroup ${NEWFILES_CUBI_ALPHA} -s MODE_COMPLEMENTARY \
