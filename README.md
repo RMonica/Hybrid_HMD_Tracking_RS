@@ -25,7 +25,7 @@ The dataset collected in the article is also available at <https://rimlab.ce.uni
 Installation
 ------------
 
-The tracking library is written in C++ and it is cross-platform. It should compile on both Windows and Linux using CMake.
+The tracking library is written in C++ (C++17 required) and it is cross-platform. It should compile on both Windows and Linux using CMake.
 
 Scripts to generate the figures of the paper require Linux (tested on Ubuntu 22.04 and 24.04) and the following dependencies:
 
@@ -43,6 +43,8 @@ Installation using Ubuntu APT:
 ```
 sudo apt install g++ cmake gnuplot-x11 r-base curl unzip
 ```
+
+The `Rscript` executable should be found using `env`. If not, edit the hashbang of files `traj_test_new/elab/fit_sigmoid.sh` and `traj_test_new/elab/compute_sign_th.sh` to point to the executable.
 
 **Build**
 
